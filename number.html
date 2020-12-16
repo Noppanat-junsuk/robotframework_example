@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <header>
+        <meta charset="UTF-8">
+        <title>Javascipt</title>    
+    </header>
+<body style="text-align: center;">
+    <h1>เพิ่มลบ ตัวเลข</h1>
+    <p id="number" style="font-size: 18px;">0</p>
+    <p>
+        <button onclick="manage.add()">เพิ่ม</button>
+    </p>
+    <p>
+        <button onclick="manage.reduce()">ลบ</button>
+    </p>
+</body>
+    <script>
+        var number = 0
+        var manage = {
+                add: function() { 
+                    var num = number + 1
+                    number = num
+                    document.getElementById('number').innerHTML= number
+                },
+                reduce: function() {
+                    var num = number - 1
+                    number = num
+                    document.getElementById('number').innerHTML = number
+                },
+            }
+    </script>
+</html>
