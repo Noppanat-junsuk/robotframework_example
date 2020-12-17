@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ตรวจสลากกินแบ่งรัฐบาล</title>
+        <style>
+            #C5 {
+                border-style: solid;
+                border-width: 1px;
+                padding: 10px;
+                margin: 10px;
+            }
+            .result-box {
+                background-color: lightgray;
+                padding: 10px;
+                margin: 10px;
+            }
+            .font-size-18 {
+                font-size: 18px;
+            }
+            .color-brown {
+                color: brown;
+            }
+            .font-size-30 {
+                font-size: 30px;
+            }
+            .color-black {
+                color: black;
+            }
+            .font-size-22 {
+                font-size: 22px;
+            }
+            .color-orange {
+                color: orange;
+            }
+            .text-center {
+                text-align: center;
+            }
+        </style>
+    </head>
+<body class="text-center">
+    <div .result-box>
+        <h1 class="font-size-22 color-black">ตรวจสลากกินแบ่งรัฐบาล</h1>
+        <p class="font-size-22 color-orange">ผลสลากฯ งวด 1 ธ.ค. 2563</p>
+        <a href="https://www.sanook.com" target="_blank"> 
+            <img src="https://s.isanook.com/sr/0/images/logo-sanook.svg">
+        </a><br>
+        <a href="#C5">ตรวจเลขสลาก</a>
+        <div class="result-box">
+            <p id="first1" class="font-size-30 color-black">รอออกผล</p>
+            <p class="font-size-18 color-brown">รางวัลที่ 1</p>
+            <p>
+                <button onclick="result.show()">ออกผลรางวัล</button>
+            </p>
+    </div>
+    <div class="C5">
+        <h2 id="C5">ตรวจเลขสลาก<br>
+            <input id="number" type="text" placeholder="กรอกเลขสลาก"><br>
+            <button  onclick="result.check()">ตรวจเลย</button>
+        </h2>
+    </div>
+    <script>
+        var result = {
+            first1: '100994',
+            show: function () {
+                document.getElementById('first1').innerHTML = result.first1
+                //alert ("function show");
+            },
+            check: function () {
+            var number = document.getElementById('number').value
+            //alert ("function check");
+                if (number === result.first1) {
+                    alert ("คุณถูกรางวัลที่ 1")
+                }
+                    else {
+                        alert ("คุณไม่ถูกรางวัล")
+                    }
+            //alert ("function check");
+            }
+        }
+
+    </script>
+</body>
+</html>
