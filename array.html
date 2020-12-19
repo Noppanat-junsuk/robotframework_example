@@ -19,20 +19,43 @@
     </head>
 <body style="text-align: center;">
     <h1>เพิ่มชุดตัวเลข</h1>
-    <div>
-        <p id="show"></p>
-        <input type="text">
-    </div>
-    <p>
-        <button onclick="manage.add()">เพิ่ม</button>
+    <div id="displayNumber"></div>
+    <p> 
+        <input id="number" type="text">
     </p>
     <p>
-        <button id="number" onclick="manage.reduce()">ลบ</button>
+        <button onclick="manage.add()">เพิ่ม</button> 
+    </p>
+    <p>
+        <button onclick="manage.reduce()">ลบ</button>
     </p>
 </body>
     <script>
-        var number = document.getElementById('number').value
-        alert ('Function check')        
+        var arabics = []
+        var manage = {
+            add: function () {
+                var number = document.getElementById('number').value
+                if (number > 100000) {
+                    arabics.push (number)
+                    displayNumber ()
+                }
+                //alert ("function show");
+            },
+            reduce: function () {
+                arabics.splice(-1,1)
+                displayNumber ()
+                //alert ("function reduce");
+            }   
+        }
+        function displayNumber () {
+            var text = " "
+            if (arabics.length > 0) {   
+                for(let index = 0; index < arabics.length; index++) {
+                    text += "<p>" + arabics[index] + "</p>"
+                }
+            }
+            document.getElementById('displayNumber').innerHTML= text
+        }
             
     </script>
 </html>
